@@ -35,12 +35,12 @@ namespace Observation.API
         {
             services.AddApplicationInsights(Configuration)
                 .AddCustomMvc()
-                .AddHealthChecks(Configuration)
+                .AddHealthChecks(Configuration);
                 //.AddCustomDbContext(Configuration)
-                .AddCustomSwagger(Configuration)
+                //.AddCustomSwagger(Configuration)
                 //.AddCustomIntegrations(Configuration)
-                .AddCustomConfiguration(Configuration)
-                .AddCustomAuthentication(Configuration);
+                //.AddCustomConfiguration(Configuration)
+                //.AddCustomAuthentication(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
