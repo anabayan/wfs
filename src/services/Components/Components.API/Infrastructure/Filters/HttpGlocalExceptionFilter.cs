@@ -1,21 +1,22 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Components.API.Infrastructure.ActionResult;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Observation.API.Infrastructure.ActionResult;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Observation.API.Infrastructure.Filters
+namespace Components.API.Infrastructure.Filters
 {
     public class HttpGlobalExceptionFilter : IExceptionFilter
     {
-        private readonly IHostingEnvironment env;
+        private readonly IWebHostEnvironment env;
         private readonly ILogger<HttpGlobalExceptionFilter> logger;
-        
-        public HttpGlobalExceptionFilter(IHostingEnvironment env, ILogger<HttpGlobalExceptionFilter> logger)
+
+        public HttpGlobalExceptionFilter(IWebHostEnvironment env, ILogger<HttpGlobalExceptionFilter> logger)
         {
             this.env = env;
             this.logger = logger;
@@ -26,10 +27,10 @@ namespace Observation.API.Infrastructure.Filters
             logger.LogError(new EventId(context.Exception.HResult),
                 context.Exception,
                 context.Exception.Message);
-            
+
             var json = new JsonErrorResponse
             {
-                Messages = new[] { "An error occured. Try it again." }
+                Messages = new[] { "An error occur.Try it again." }
             };
 
             if (env.IsDevelopment())
@@ -41,7 +42,7 @@ namespace Observation.API.Infrastructure.Filters
             // It will be fixed in .net core 1.1.2. See https://github.com/aspnet/Mvc/issues/5594 for more information
             context.Result = new InternalServerErrorObjectResult(json);
             context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            
+
             context.ExceptionHandled = true;
         }
 
