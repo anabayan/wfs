@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Components.API.Infrastructure.Repositories;
+using Components.API.Model;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -27,7 +29,7 @@ namespace Components.API
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             services
                 .AddAppInsight(Configuration)
@@ -36,9 +38,13 @@ namespace Components.API
                 .AddSwagger()
                 .AddCustomHealthCheck(Configuration);
 
-            var container = new ContainerBuilder();
-            container.Populate(services);
-            return new AutofacServiceProvider(container.Build());
+            services.Configure<ComponentsSettings>(Configuration);
+
+            services.AddTransient<IWorkflowComponentDataRepository<WorkflowComponent>, WorkflowComponentDataRepository<WorkflowComponent>>();
+
+            //var container = new ContainerBuilder();
+            //container.Populate(services);
+            //return new AutofacServiceProvider(container.Build());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -44,7 +44,8 @@ namespace Components.API
                 options.Filters.Add(typeof(HttpGlobalExceptionFilter));
             })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
-                .AddControllersAsServices();
+                .AddControllersAsServices()
+                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddCors(options =>
             {
