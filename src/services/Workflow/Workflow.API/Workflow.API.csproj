@@ -2,36 +2,31 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UserSecretsId>6241dfc8-ba2d-4e53-acd3-bc2c11333924</UserSecretsId>
+    <UserSecretsId>31d2704f-7a31-4ed5-8955-f395114dbd7e</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerfileContext>..\..\..</DockerfileContext>
-    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <DockerfileContext>..\..\..\..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspNetCore.HealthChecks.AzureServiceBus" Version="3.0.0" />
-    <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" Version="3.0.3" />
-    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.0.0" />
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="aspnetcore.healthchecks.azureservicebus" Version="3.0.0" />
+    <PackageReference Include="aspnetcore.healthchecks.rabbitmq" Version="3.0.3" />
+    <PackageReference Include="aspnetcore.healthchecks.ui.client" Version="3.0.2" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.12.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.Kubernetes" Version="1.1.1" />
     <PackageReference Include="Microsoft.ApplicationInsights.ServiceFabric" Version="2.3.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
-    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.5.1" />
-    <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.9.2" />
+    <PackageReference Include="microsoft.aspnetcore.mvc.newtonsoftjson" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="3.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
-    <PackageReference Include="Microsoft.OpenApi" Version="1.1.4" />
+    <PackageReference Include="Microsoft.openapi" Version="1.1.4" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
     <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc5" />
+    <PackageReference Include="swashbuckle.aspnetcore.swaggergen" Version="5.0.0-rc5" />
+    <PackageReference Include="swashbuckle.aspnetcore.swaggerui" Version="5.0.0-rc5" />
   </ItemGroup>
-
 
 </Project>

@@ -29,7 +29,7 @@ namespace Components.API.Controllers
         [ProducesResponseType(typeof(List<WorkflowComponent>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<List<WorkflowComponent>>> GetAllComponents()
         {
-            var componentsList = await _workflowRepository.GetItemsAsync(action => action.Id == action.Id);
+            var componentsList = await _workflowRepository.GetAllItemsAsync();
             
             if(componentsList is null)
             {

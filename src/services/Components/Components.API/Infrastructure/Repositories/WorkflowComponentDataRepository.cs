@@ -68,6 +68,24 @@ namespace Components.API.Infrastructure.Repositories
             return results;
         }
 
+
+        public async Task<IEnumerable<T>> GetAllItemsAsync()
+        {
+            IDocumentQuery<T> query = documentClient.CreateDocumentQuery<T>(
+                UriFactory.CreateDocumentCollectionUri(_settings.AzureCosmosDBDatabaseId, _settings.AzureCosmosDBContainerId),
+                new FeedOptions { MaxItemCount = -1, EnableCrossPartitionQuery = true })
+                .AsDocumentQuery();
+
+            List<T> results = new List<T>();
+            while (query.HasMoreResults)
+            {
+                var partialResult = await query.ExecuteNextAsync<T>();
+                results.AddRange(partialResult);
+            }
+
+            return results;
+        }
+
         public async Task<Document> CreateItemAsync(T item)
         {
             return await documentClient.CreateDocumentAsync(

@@ -1,5 +1,4 @@
-﻿using Components.API.Infrastructure.Filters;
-using Microsoft.ApplicationInsights.Extensibility;
+﻿using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.ApplicationInsights.ServiceFabric;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -7,9 +6,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.OpenApi.Models;
+using Workflow.API.Infrastructure.Filters;
 
-namespace Components.API
+namespace Workflow.API.Infrastructure.Extensions
 {
+
     public static class StartupExtensions
     {
         public static IServiceCollection AddAppInsight(this IServiceCollection services, IConfiguration configuration)

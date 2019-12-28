@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  components.api:
+    image: ${DOCKER_REGISTRY-}componentsapi
+    build:
+      context: .
+      dockerfile: services/Components/Components.API/Dockerfile

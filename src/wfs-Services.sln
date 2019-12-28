@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Observation.API", "services\Observation\Observation.API\Observation.API.csproj", "{BC3FA204-B064-48E2-90AE-3F7D7D69F843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Components.API", "services\Components\Components.API\Components.API.csproj", "{F5C37444-005B-41D2-A15D-244A1185982A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Components.API", "services\Components\Components.API\Components.API.csproj", "{F5C37444-005B-41D2-A15D-244A1185982A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workflow.API", "services\Workflow\Workflow.API\Workflow.API.csproj", "{AB53BFBA-F8FF-43AF-8E14-65D3F078D62B}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{35FB46E5-88D3-4F13-A12A-3ECA8E5A87CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{F5C37444-005B-41D2-A15D-244A1185982A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5C37444-005B-41D2-A15D-244A1185982A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5C37444-005B-41D2-A15D-244A1185982A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB53BFBA-F8FF-43AF-8E14-65D3F078D62B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB53BFBA-F8FF-43AF-8E14-65D3F078D62B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB53BFBA-F8FF-43AF-8E14-65D3F078D62B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB53BFBA-F8FF-43AF-8E14-65D3F078D62B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35FB46E5-88D3-4F13-A12A-3ECA8E5A87CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35FB46E5-88D3-4F13-A12A-3ECA8E5A87CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35FB46E5-88D3-4F13-A12A-3ECA8E5A87CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35FB46E5-88D3-4F13-A12A-3ECA8E5A87CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

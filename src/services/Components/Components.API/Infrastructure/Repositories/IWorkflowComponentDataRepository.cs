@@ -12,6 +12,7 @@ namespace Components.API.Infrastructure.Repositories
         Task DeleteItemAsync(string id);
         Task<T> GetItemAsync(string id);
         Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate);
+        Task<IEnumerable<T>> GetAllItemsAsync();
         Task<Document> UpdateItemAsync(string id, T item);
     }
 }
