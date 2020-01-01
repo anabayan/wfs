@@ -7,5 +7,8 @@ namespace Workflow.API.Model
 {
     public class Process
     {
+        public string Name { get; set; }
+        public List<Phase> Phases { get; set; }
+
     }
 }

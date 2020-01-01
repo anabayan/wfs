@@ -10,7 +10,6 @@ namespace Workflow.API.Model
         public string Name { get; set; }
         public string Label { get; set; }
         public string DefaultValue { get; set; }
-        public int MyProperty { get; set; }
         public bool IsRequired { get; set; }
         public string Type { get; set; }
         public string HelpMarkdown { get; set; }
