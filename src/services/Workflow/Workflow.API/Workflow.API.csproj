@@ -26,7 +26,7 @@
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.0" />
     <PackageReference Include="swashbuckle.aspnetcore.swaggergen" Version="5.0.0-rc5" />
-    <PackageReference Include="swashbuckle.aspnetcore.swaggerui" Version="5.0.0-rc5" />
+    <PackageReference Include="swashbuckle.aspnetcore.swaggerui" Version="6.4.0" />
   </ItemGroup>
 
 </Project>
